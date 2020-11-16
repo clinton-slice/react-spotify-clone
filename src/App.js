@@ -1,9 +1,10 @@
-import "./App.css";
+import './App.css';
+import React from 'react';
 
 function App() {
   return (
     <div className="app">
-      Spotify app 
+      <h1> Spotify app  </h1>
     </div>
   );
 }
