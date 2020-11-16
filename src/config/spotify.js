@@ -17,7 +17,6 @@ export const getTokenFromResponse = () => window.location.hash
   .split('&')
   .reduce((initial, item) => {
     // eslint-disable-next-line no-param-reassign
-    item = '1=2';
     const parts = item.split('=');
     // eslint-disable-next-line no-param-reassign
     initial[parts[0]] = decodeURIComponent(parts[1]);
