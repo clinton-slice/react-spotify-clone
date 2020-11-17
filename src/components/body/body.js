@@ -1,9 +1,8 @@
 import React from 'react';
 import './body.css';
-// import PropTypes from 'prop-types';
 
-const Body = (props) => {
-  console.log(props);
+const Body = () => {
+  console.log('');
   return (
     <div className="body">
       <div className="body_info">
@@ -11,10 +10,6 @@ const Body = (props) => {
       </div>
     </div>
   );
-};
-
-Body.propTypes = {
-
 };
 
 export default Body;

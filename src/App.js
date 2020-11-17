@@ -10,7 +10,7 @@ import { useStateValue } from './wrappers/app-state-provider';
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ token, user }, dispatch] = useStateValue();
+  const [{ token }, dispatch] = useStateValue();
   React.useEffect(() => {
     // Set token
     const hash = getTokenFromResponse();
@@ -29,10 +29,15 @@ function App() {
           user: _user,
         });
       });
+      spotify.getUserPlaylists().then((_playlists) => {
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists: _playlists,
+        });
+      });
     }
   }, [token]);
-  console.log('user: ', user);
-  console.log('token: ', token);
+
   return (
 
     <div className="app">
