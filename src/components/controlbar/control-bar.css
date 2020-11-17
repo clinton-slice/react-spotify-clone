@@ -1,4 +1,4 @@
-.control_bar {
+.controlbar {
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -9,10 +9,10 @@
   background-color: #282828;
 }
 
-.control_bar_right * .MuiSlider-root {
+.controlbar_right * .MuiSlider-root {
   color: green;
 }
-.control_bar_left {
+.controlbar_songDetails {
   display: flex;
   align-items: center;
   color: white;
@@ -20,11 +20,11 @@
   flex: 0.3;
 }
 
-.control_bar_green {
+.controlbar_green {
   color: #1ed15e;
 }
 
-.control_bar_center {
+.controlbar_controls {
   flex: 0.4;
   max-width: 300px;
   padding: 0 100px;
@@ -34,13 +34,13 @@
   justify-content: space-between;
 }
 
-.control_bar_icon:hover,
-.control_bar_green:hover {
+.controlbar_icon:hover,
+.controlbar_green:hover {
   transition: transform 0.2s ease-in-out;
   transform: scale(1.2) !important;
 }
 
-.control_bar_right {
+.controlbar_right {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,17 +48,17 @@
   flex: 0.3;
 }
 
-.control_bar_albumLogo {
+.controlbar_albumLogo {
   height: 60px;
   width: 60px;
   margin-right: 20px;
   object-fit: contain;
 }
 
-.control_bar_songInfo > h4 {
+.controlbar_songInfo > h4 {
   margin-bottom: 5px;
 }
 
-.control_bar_songInfo > p {
+.controlbar_songInfo > p {
   font-size: 12px;
 }
