@@ -3,12 +3,11 @@ import { useStateValue } from '../../wrappers/app-state-provider';
 import './sidebar.css';
 import SidebarOption from '../sidebar-option/SidebarOption';
 import { Home, Library, Search } from '../../assets/icons';
-// import { getTokenFromResponse } from './spotify';
+import PlaylistList from '../playlist-list/PlaylistList';
 
 const Sidebar = () => {
-  const [{ playlists }] = useStateValue();
-
-  console.log('playlists: ', playlists);
+  const [{ playlists }, dispatch] = useStateValue();
+  // console.log('playlists: ', playlists);
   return (
     <div className="sidebar">
       <img
@@ -22,9 +21,17 @@ const Sidebar = () => {
       <br />
       <strong className="sidebar_title">PLAYLISTS</strong>
       <hr />
-      {/* <SidebarOption option="playlist" /> */}
-      {playlists?.items?.map(({ name, id }) => (
-        <SidebarOption option={name} id={id} key={id} />
+
+      {playlists?.items?.map((item) => (
+        <PlaylistList
+          option={item.name}
+          id={item.id}
+          key={item.id}
+          onSelectPlaylist={() => dispatch({
+            type: 'SET_PLAYLIST',
+            playlist: item,
+          })}
+        />
       ))}
     </div>
   );

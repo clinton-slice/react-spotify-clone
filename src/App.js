@@ -10,8 +10,8 @@ import { useStateValue } from './wrappers/app-state-provider';
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ token }, dispatch] = useStateValue();
-  console.log(token);
+  const [{ token, playlistId }, dispatch] = useStateValue();
+  // console.log(token);
   React.useEffect(() => {
     // Set token
     const hash = getTokenFromResponse();
@@ -36,9 +36,9 @@ function App() {
           playlists: _playlists,
         });
       });
-      spotify.getPlaylist('37i9dQZEVXcUzDRfZryoxO').then((response) => dispatch({
-        type: 'SET_DISCOVER_WEEKLY',
-        discoverWeekly: response,
+      spotify.getPlaylist(`${playlistId}`).then((response) => dispatch({
+        type: 'SET_PLAYLIST',
+        playlist: response,
       }));
     }
   }, [token]);

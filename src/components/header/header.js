@@ -1,9 +1,6 @@
 import './header.css';
-
 import React from 'react';
 import { Avatar } from '@material-ui/core';
-// import SearchIcon from '@material-ui/icons/Search';
-
 import { useStateValue } from '../../wrappers/app-state-provider';
 import { Back, Forward } from '../../assets/icons';
 

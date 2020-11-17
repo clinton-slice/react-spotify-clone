@@ -46,8 +46,10 @@ const ControlBar = ({ spotify }) => {
   };
 
   const skipNext = () => {
+    console.log('NEXTTTTTTT !!!!!!!!!');
     spotify.skipToNext();
     spotify.getMyCurrentPlayingTrack().then((response) => {
+      console.log('nnext: ', response.item);
       dispatch({
         type: 'SET_ITEM',
         item: response.item,
@@ -95,7 +97,7 @@ const ControlBar = ({ spotify }) => {
       <div className="controlbar_controls">
         <ShuffleIcon className="controlbar_green" />
         <SkipPreviousIcon
-          onClick={skipNext}
+          onClick={skipPrevious}
           className="controlbar_icon"
         />
         {playing ? (
@@ -112,7 +114,7 @@ const ControlBar = ({ spotify }) => {
           />
         )}
         <SkipNextIcon
-          onClick={skipPrevious}
+          onClick={skipNext}
           className="controlbar_icon"
         />
         <RepeatIcon className="controlbar_green" />
