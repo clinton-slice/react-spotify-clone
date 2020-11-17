@@ -1,7 +1,12 @@
 import './App.css';
 import React from 'react';
+import SpotifyWebApi from 'spotify-web-api-js';
 import Login from './screens/login';
 import { getTokenFromResponse } from './config/spotify';
+import Player from './screens/player/player';
+
+// Context for the app state
+const spotify = new SpotifyWebApi();
 
 function App() {
   const [token, setToken] = React.useState(null);
@@ -13,13 +18,18 @@ function App() {
     const obtainedToken = hash.access_token;
     if (obtainedToken) {
       setToken(obtainedToken);
+      spotify.setAccessToken(obtainedToken);
+      spotify.getMe().then((user) => {
+        console.log('user: ', user);
+      });
     }
-    console.log('I HAVE TOKEN >>> ', token);
   }, []);
   return (
+
     <div className="app">
-      {token ? <div>Log in succesfull</div> : <Login />}
+      {token ? <Player /> : <Login />}
     </div>
+
   );
 }
 
