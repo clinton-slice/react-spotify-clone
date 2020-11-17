@@ -9,12 +9,13 @@ import { useStateValue } from '../../wrappers/app-state-provider';
 import SongList from '../song-list/SongList';
 
 const Body = ({ spotify }) => {
-  const [{ discoverWeekly }, dispatch] = useStateValue();
-  console.log(discoverWeekly);
+  const [{ playlist }, dispatch] = useStateValue();
+  // console.log('playlist: ', playlist);
+
   const playPlaylist = () => {
     spotify
       .play({
-        context_uri: 'spotify:playlist:37i9dQZEVXcUzDRfZryoxO',
+        context_uri: `spotify:playlist:${playlist}`,
       })
       .then(() => {
         spotify.getMyCurrentPlayingTrack().then((r) => {
@@ -36,10 +37,10 @@ const Body = ({ spotify }) => {
         uris: [`spotify:track:${id}`],
       })
       .then(() => {
-        spotify.getMyCurrentPlayingTrack().then((r) => {
+        spotify.getMyCurrentPlayingTrack().then((response) => {
           dispatch({
             type: 'SET_ITEM',
-            item: r.item,
+            item: response.item,
           });
           dispatch({
             type: 'SET_PLAYING',
@@ -48,17 +49,18 @@ const Body = ({ spotify }) => {
         });
       });
   };
+
   return (
     <div className="body">
-      <Header spotify={spotify} />
+      <Header />
       {/* <div className="body_info"> */}
       {/* <div className="body_header"> */}
       <div className="body_info">
-        <img src={discoverWeekly?.images[0].url} alt="" />
+        <img src={playlist?.images[0].url} alt="" />
         <div className="body_infoText">
           <strong>PLAYLIST</strong>
-          <h2>Discover Weekly</h2>
-          <p>{discoverWeekly?.description}</p>
+          <h2>{playlist?.name ? playlist?.name : 'Unknown Playlist'}</h2>
+          <p>{playlist?.description ? playlist?.description : ''}</p>
         </div>
       </div>
       {/* </div> */}
@@ -72,10 +74,11 @@ const Body = ({ spotify }) => {
           <MoreHorizIcon />
         </div>
 
-        {discoverWeekly?.tracks.items.map((item) => (
+        {playlist?.tracks.items.map((item) => (
           <SongList
             playSong={playSong}
             track={item.track}
+            key={item.track.id}
           />
         ))}
       </div>
