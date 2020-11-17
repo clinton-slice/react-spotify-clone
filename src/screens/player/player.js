@@ -1,5 +1,5 @@
 import React from 'react';
-import './player.css';
+import './Player.css';
 import PropTypes from 'prop-types';
 import Sidebar from '../../components/sidebar/Sidebar';
 import ControlBar from '../../components/controlbar/ControlBar';
