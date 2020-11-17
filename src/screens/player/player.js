@@ -1,12 +1,19 @@
 import React from 'react';
 import './player.css';
 import PropTypes from 'prop-types';
+import Sidebar from '../../components/sidebar/sidebar';
+import ControlBar from '../../components/controlbar/control-bar';
+import Body from '../../components/body/body';
 
 const Player = ({ spotify }) => {
   console.log('spotify: ', spotify);
   return (
     <div className="player">
-      <div className="player_body" />
+      <div className="player_body">
+        <Sidebar />
+        <Body />
+      </div>
+      <ControlBar />
     </div>
   );
 };
