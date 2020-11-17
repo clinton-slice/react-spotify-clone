@@ -8,6 +8,7 @@ import { Home, Library, Search } from '../../assets/icons';
 const Sidebar = () => {
   const [{ playlists }] = useStateValue();
 
+  console.log('playlists: ', playlists);
   return (
     <div className="sidebar">
       <img
@@ -22,8 +23,8 @@ const Sidebar = () => {
       <strong className="sidebar_title">PLAYLISTS</strong>
       <hr />
       {/* <SidebarOption option="playlist" /> */}
-      {playlists?.items?.map((playlist) => (
-        <SidebarOption option={playlist.name} />
+      {playlists?.items?.map(({ name, id }) => (
+        <SidebarOption option={name} id={id} key={id} />
       ))}
     </div>
   );

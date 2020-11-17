@@ -1,0 +1,33 @@
+.songList {
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+}
+
+.songList:hover {
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.songList_info {
+  margin-left: 20px;
+}
+
+.songList_info > h1 {
+  font-size: 16px;
+}
+
+.songList_info > p {
+  font-size: 14px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.songList_album {
+  height: 40px;
+  width: 40px;
+}

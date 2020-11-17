@@ -4,12 +4,12 @@ export const initialState = {
   user: null,
   playlists: [],
   spotify: null,
-  discover_weekly: null,
+  discoverWeekly: null,
   top_artists: null,
   playing: false,
   item: null,
   // eslint-disable-next-line max-len
-  // token: 'BQBbJAcqxbWcvblRfTlikSHgigWBzUdj5aCTS8F1jV4A61erif9XOBH_CwB46L0R1OD0OEOmW9-x9AIFVf8BNtRBv1ly-bc0yXZ8BNlpHCM5nwgegs6_tDflWNEa8ToT8lrZuuPQG5nWqhUH8tfxqCQSrpYMh4S_JUidrU2s2yVa4aLo',
+  // token: 'BQB2ipzO3UaFa2VT9GTZXUMAw9LLTWTvFZS6cOPgeyheuj2cmS5toh8vCV3dgjyPRbWJz_rCdAkbBjHTmJo-HN4-IrAa0ThtVVP51p1kIALj1QM6xF0qyijB1NSA15Bgc2eJ1AP_fns83wJmx-JLZRTQzfA',
 };
 
 export const reducer = (state, action) => {
@@ -36,7 +36,7 @@ export const reducer = (state, action) => {
     case 'SET_DISCOVER_WEEKLY':
       return {
         ...state,
-        discover_weekly: action.discover_weekly,
+        discoverWeekly: action.discoverWeekly,
       };
 
     case 'SET_TOP_ARTISTS':

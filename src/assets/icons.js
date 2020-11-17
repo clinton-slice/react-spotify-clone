@@ -18,3 +18,15 @@ export const Home = () => (
     <path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z" fill="currentColor" />
   </svg>
 );
+
+export const Back = () => (
+  <svg role="img" focusable="false" height="24" width="24" viewBox="0 0 24 24" className="Svg-sc-1usfroi-0 jUuLJy _6fe5d5efc9b4a07d5c424071ac7cdacb-scss">
+    <polyline points="16 4 7 12 16 20" fill="none" stroke="#ffff" />
+  </svg>
+);
+
+export const Forward = () => (
+  <svg role="img" focusable="false" height="24" width="24" viewBox="0 0 24 24" className="Svg-sc-1usfroi-0 jUuLJy _6fe5d5efc9b4a07d5c424071ac7cdacb-scss">
+    <polyline points="8 4 17 12 8 20" fill="none" stroke="#ffff" />
+  </svg>
+);
