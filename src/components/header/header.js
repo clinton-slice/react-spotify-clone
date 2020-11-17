@@ -1,4 +1,4 @@
-import './header.css';
+import './Header.css';
 import React from 'react';
 import { Avatar } from '@material-ui/core';
 import { useStateValue } from '../../wrappers/app-state-provider';

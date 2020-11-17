@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
-import Login from './screens/login';
+import Login from './screens/login/Login';
 import { getTokenFromResponse } from './config/spotify';
-import Player from './screens/player/player';
+import Player from './screens/player/Player';
 import { useStateValue } from './wrappers/app-state-provider';
 
 // Context for the app state
