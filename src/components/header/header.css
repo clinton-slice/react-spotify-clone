@@ -1,6 +1,6 @@
 .header {
   position: sticky;
-  top: 60px;
+  top: 0px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -11,7 +11,6 @@
 .header_right {
   display: flex;
   align-items: center;
-  width: 13%;
 }
 
 .header_left {
@@ -23,25 +22,8 @@
   align-items: center;
 }
 
-.profile_black {
-  border: none;
-  height: 32px;
-  width: -webkit-fill-available;
-  border-radius: 99px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  display: flex;
-  align-items: center;
-}
-
 .header_right {
   cursor: pointer;
-}
-
-.profile_avatar {
-  margin-right: 16px;
-  width: 32px;
-  height: 32px;
 }
 
 .header_right > h4 {
