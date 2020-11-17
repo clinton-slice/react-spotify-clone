@@ -1,0 +1,77 @@
+.header {
+  position: sticky;
+  top: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  width: -webkit-fill-available;
+  align-items: center;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  width: 13%;
+}
+
+.header_left {
+  flex: 0.5;
+  display: flex;
+  padding: 10px;
+  border-radius: 30px;
+  color: gray;
+  align-items: center;
+}
+
+.profile_black {
+  border: none;
+  height: 32px;
+  width: -webkit-fill-available;
+  border-radius: 99px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.header_right {
+  cursor: pointer;
+}
+
+.profile_avatar {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+
+.header_right > h4 {
+  margin-left: 10px;
+}
+
+.playlist_control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back {
+  margin-right: 16px;
+}
+.bg_black {
+  border: none;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}

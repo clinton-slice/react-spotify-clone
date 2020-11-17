@@ -11,6 +11,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   const [{ token }, dispatch] = useStateValue();
+  console.log(token);
   React.useEffect(() => {
     // Set token
     const hash = getTokenFromResponse();
@@ -35,6 +36,10 @@ function App() {
           playlists: _playlists,
         });
       });
+      spotify.getPlaylist('37i9dQZEVXcUzDRfZryoxO').then((response) => dispatch({
+        type: 'SET_DISCOVER_WEEKLY',
+        discoverWeekly: response,
+      }));
     }
   }, [token]);
 
