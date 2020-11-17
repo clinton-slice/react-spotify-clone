@@ -1,5 +1,5 @@
 import './header.css';
-import PropTypes from 'prop-types';
+
 import React from 'react';
 import { Avatar } from '@material-ui/core';
 // import SearchIcon from '@material-ui/icons/Search';
@@ -7,11 +7,10 @@ import { Avatar } from '@material-ui/core';
 import { useStateValue } from '../../wrappers/app-state-provider';
 import { Back, Forward } from '../../assets/icons';
 
-const Header = ({ spotify }) => {
-  const [{ user, playlists }] = useStateValue();
-  console.log('Header : ', spotify);
-  console.log('playlists : ', playlists);
-  // getplaylist(id, options, callback)
+const Header = () => {
+  const [{ user }] = useStateValue();
+  // console.log('Header : ', spotify);
+
   return (
     <div className="header">
       <div className="header_left">
@@ -36,8 +35,3 @@ const Header = ({ spotify }) => {
 };
 
 export default Header;
-
-Header.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  spotify: PropTypes.object.isRequired,
-};

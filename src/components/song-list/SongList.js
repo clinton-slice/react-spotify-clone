@@ -4,7 +4,6 @@ import React from 'react';
 import './SongList.css';
 
 function SongList({ track, playSong }) {
-  console.log(track);
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div className="songList" onClick={() => playSong(track.id)}>
