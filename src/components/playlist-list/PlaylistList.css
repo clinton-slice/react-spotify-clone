@@ -1,0 +1,40 @@
+.playlistList {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  height: 40px;
+  color: grey;
+  transition: 200ms color ease-in;
+}
+
+.playlistList:hover {
+  color: white;
+}
+
+.sidebar > hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.playlistList_icon {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.playlistList > p {
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.playlistList_menu {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: normal;
+  text-transform: none;
+}
