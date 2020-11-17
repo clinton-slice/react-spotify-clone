@@ -23,7 +23,18 @@
 }
 
 .sidebarOption > p {
-  margin-top: 10px;
-  margin-left: 20px;
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.sidebarOption_menu {
   font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: normal;
+  text-transform: none;
 }

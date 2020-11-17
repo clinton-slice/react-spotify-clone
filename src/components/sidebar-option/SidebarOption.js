@@ -4,8 +4,13 @@ import './SidebarOption.css';
 
 const SidebarOption = ({ option, Icon }) => (
   <div className="sidebarOption">
-    {Icon && <Icon className="sidebarOption_icon" />}
-    {Icon ? <h4>{option}</h4> : <p>{option}</p>}
+
+    {Icon && (
+      <div className="sidebarOption_icon">
+        <Icon />
+      </div>
+    )}
+    {Icon ? <span className="sidebarOption_menu">{option}</span> : <p>{option}</p>}
   </div>
 );
 
