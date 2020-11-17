@@ -1,5 +1,5 @@
 import React from 'react';
-import './control-bar.css';
+import './ControlBar.css';
 import PropTypes from 'prop-types';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';

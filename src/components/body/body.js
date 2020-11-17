@@ -1,10 +1,10 @@
-import './body.css';
+import './Body.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import Header from '../header/header';
+import Header from '../header/Header';
 import { useStateValue } from '../../wrappers/app-state-provider';
 import SongList from '../song-list/SongList';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStateValue } from '../../wrappers/app-state-provider';
-import './sidebar.css';
+import './Sidebar.css';
 import SidebarOption from '../sidebar-option/SidebarOption';
 import { Home, Library, Search } from '../../assets/icons';
 import PlaylistList from '../playlist-list/PlaylistList';
