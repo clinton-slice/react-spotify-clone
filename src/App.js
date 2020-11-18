@@ -32,29 +32,21 @@ function App() {
       });
       spotify.getUserPlaylists().then((_playlists) => {
         dispatch({
-          type: 'SET_PLAYLIST_ID',
-          playlists: _playlists.items[0].id,
-        });
-        console.log('IN HERE !!!!!!!!!!!!!');
-        dispatch({
           type: 'SET_PLAYLISTS',
           playlists: _playlists.items,
         });
+        dispatch({
+          type: 'SET_PLAYLIST_ID',
+          playlistId: _playlists.items[0].id,
+        });
       });
-      spotify.getPlaylist(`${playlistId}`).then((response) => dispatch({
-        type: 'SET_PLAYLIST',
-        playlist: response,
-      }));
     }
   }, [token]);
 
-  // React.useEffect(()=>{
-  //   dispatch({
-  //     type: 'SET_PLAYLIST_ID',
-  //     playlists: _playlists.items[0].id,
-  //   });
-  // })
-
+  spotify.getPlaylist(`${playlistId}`).then((playlist) => dispatch({
+    type: 'SET_PLAYLIST',
+    playlist,
+  }));
   return (
 
     <div className="app">

@@ -9,10 +9,7 @@ import { useStateValue } from '../../wrappers/app-state-provider';
 import SongList from '../song-list/SongList';
 
 const Body = ({ spotify }) => {
-  const [{ playlist, playlists, playlistId }, dispatch] = useStateValue();
-  console.log('playlist: ', playlist);
-  console.log('playlists: ', playlists);
-  console.log('playlists ID: ', playlistId);
+  const [{ playlist }, dispatch] = useStateValue();
 
   const playPlaylist = () => {
     spotify
