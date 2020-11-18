@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './PlaylistList.css';
 
-const PlaylistList = ({ option, onSelectPlaylist }) => (
+const PlaylistList = ({ title, onSelectPlaylist }) => (
   // eslint-disable-next-line jsx-a11y/no-static-element-interactions
   <div className="sidebarOption" onClick={onSelectPlaylist}>
-    <p>{option}</p>
+    <p>{title}</p>
   </div>
 );
 
 PlaylistList.propTypes = {
-  option: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   onSelectPlaylist: PropTypes.func.isRequired,
 };
 

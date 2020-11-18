@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import './Body.css';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -52,17 +53,22 @@ const Body = ({ spotify }) => {
   return (
     <div className="body">
       <Header />
-      {/* <div className="body_info"> */}
-      {/* <div className="body_header"> */}
       <div className="body_info">
-        <img src={playlist?.images[0].url} alt="" />
+        <img
+          src={playlist?.images[0].url}
+          alt=""
+
+        />
         <div className="body_infoText">
-          <strong>PLAYLIST</strong>
-          <h2>{playlist?.name ? playlist?.name : 'Unknown Playlist'}</h2>
+          <p>PLAYLIST</p>
+          <h2>{playlist?.name ? playlist?.name : 'Loading...'}</h2>
           <p>{playlist?.description ? playlist?.description : ''}</p>
+          <p>
+            <b>{`${playlist?.owner?.display_name}.`}</b>
+            {`${playlist?.tracks?.total} songs`}
+          </p>
         </div>
       </div>
-      {/* </div> */}
       <div className="body_songs">
         <div className="body_icons">
           <PlayCircleFilledIcon
@@ -82,7 +88,6 @@ const Body = ({ spotify }) => {
         ))}
       </div>
     </div>
-
   );
 };
 

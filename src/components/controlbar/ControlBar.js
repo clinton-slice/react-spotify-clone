@@ -46,10 +46,8 @@ const ControlBar = ({ spotify }) => {
   };
 
   const skipNext = () => {
-    console.log('NEXTTTTTTT !!!!!!!!!');
     spotify.skipToNext();
     spotify.getMyCurrentPlayingTrack().then((response) => {
-      console.log('nnext: ', response.item);
       dispatch({
         type: 'SET_ITEM',
         item: response.item,

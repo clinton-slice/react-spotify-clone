@@ -8,9 +8,9 @@ import { useStateValue } from './wrappers/app-state-provider';
 
 // Context for the app state
 const spotify = new SpotifyWebApi();
-
+console.log(spotify);
 function App() {
-  const [{ token, playlistId }, dispatch] = useStateValue();
+  const [{ token }, dispatch] = useStateValue();
   // console.log(token);
   React.useEffect(() => {
     // Set token
@@ -39,14 +39,14 @@ function App() {
           type: 'SET_PLAYLIST_ID',
           playlistId: _playlists.items[0].id,
         });
+        spotify.getPlaylist(`${_playlists.items[0].id}`).then((playlist) => dispatch({
+          type: 'SET_PLAYLIST',
+          playlist,
+        }));
       });
     }
   }, [token]);
 
-  spotify.getPlaylist(`${playlistId}`).then((playlist) => dispatch({
-    type: 'SET_PLAYLIST',
-    playlist,
-  }));
   return (
 
     <div className="app">

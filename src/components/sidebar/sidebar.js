@@ -24,7 +24,7 @@ const Sidebar = () => {
 
       {playlists?.map((item) => (
         <PlaylistList
-          option={item.name}
+          title={item.name}
           id={item.id}
           key={item.id}
           onSelectPlaylist={() => dispatch({
