@@ -7,7 +7,7 @@ import PlaylistList from '../playlist-list/PlaylistList';
 
 const Sidebar = () => {
   const [{ playlists }, dispatch] = useStateValue();
-  // console.log('playlists: ', playlists);
+
   return (
     <div className="sidebar">
       <img
@@ -22,7 +22,7 @@ const Sidebar = () => {
       <strong className="sidebar_title">PLAYLISTS</strong>
       <hr />
 
-      {playlists?.items?.map((item) => (
+      {playlists?.map((item) => (
         <PlaylistList
           option={item.name}
           id={item.id}

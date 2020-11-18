@@ -9,8 +9,10 @@ import { useStateValue } from '../../wrappers/app-state-provider';
 import SongList from '../song-list/SongList';
 
 const Body = ({ spotify }) => {
-  const [{ playlist }, dispatch] = useStateValue();
-  // console.log('playlist: ', playlist);
+  const [{ playlist, playlists, playlistId }, dispatch] = useStateValue();
+  console.log('playlist: ', playlist);
+  console.log('playlists: ', playlists);
+  console.log('playlists ID: ', playlistId);
 
   const playPlaylist = () => {
     spotify
@@ -83,7 +85,7 @@ const Body = ({ spotify }) => {
         ))}
       </div>
     </div>
-  // </div>
+
   );
 };
 

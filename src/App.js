@@ -32,8 +32,13 @@ function App() {
       });
       spotify.getUserPlaylists().then((_playlists) => {
         dispatch({
+          type: 'SET_PLAYLIST_ID',
+          playlists: _playlists.items[0].id,
+        });
+        console.log('IN HERE !!!!!!!!!!!!!');
+        dispatch({
           type: 'SET_PLAYLISTS',
-          playlists: _playlists,
+          playlists: _playlists.items,
         });
       });
       spotify.getPlaylist(`${playlistId}`).then((response) => dispatch({
@@ -42,6 +47,13 @@ function App() {
       }));
     }
   }, [token]);
+
+  // React.useEffect(()=>{
+  //   dispatch({
+  //     type: 'SET_PLAYLIST_ID',
+  //     playlists: _playlists.items[0].id,
+  //   });
+  // })
 
   return (
 
