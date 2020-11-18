@@ -13,16 +13,18 @@ import SongList from '../song-list/SongList';
 const Body = ({ spotify }) => {
   const [{ playlist }, dispatch] = useStateValue();
 
+  console.log(playlist);
+
   const playPlaylist = () => {
     spotify
       .play({
         context_uri: `spotify:playlist:${playlist}`,
       })
       .then(() => {
-        spotify.getMyCurrentPlayingTrack().then((r) => {
+        spotify.getMyCurrentPlayingTrack().then((response) => {
           dispatch({
             type: 'SET_ITEM',
-            item: r.item,
+            item: response.item,
           });
           dispatch({
             type: 'SET_PLAYING',
