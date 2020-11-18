@@ -12,7 +12,7 @@ export const AppStateProvider = ({ reducer, initialState, children }) => (
 export const useStateValue = () => useContext(AppStateContext);
 
 AppStateProvider.propTypes = {
-  reducer: PropTypes.string.isRequired,
+  reducer: PropTypes.func.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   initialState: PropTypes.object.isRequired,
   children: PropTypes.element.isRequired,

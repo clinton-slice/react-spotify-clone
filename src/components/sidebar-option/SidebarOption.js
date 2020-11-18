@@ -16,7 +16,7 @@ const SidebarOption = ({ option, Icon }) => (
 
 SidebarOption.propTypes = {
   option: PropTypes.string.isRequired,
-  Icon: PropTypes.element.isRequired,
+  Icon: PropTypes.func.isRequired,
 };
 
 export default SidebarOption;
