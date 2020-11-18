@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
+import { SpotifyApiContext } from 'react-spotify-api';
 import Login from './screens/login/Login';
 import { getTokenFromResponse } from './config/spotify';
 import Player from './screens/player/Player';
 import { useStateValue } from './wrappers/app-state-provider';
-
 // Context for the app state
 const spotify = new SpotifyWebApi();
 console.log(spotify);
@@ -50,7 +50,11 @@ function App() {
   return (
 
     <div className="app">
-      {token ? <Player spotify={spotify} /> : <Login />}
+      {token ? (
+        <SpotifyApiContext.Provider value={token}>
+          <Player spotify={spotify} />
+        </SpotifyApiContext.Provider>
+      ) : <Login />}
     </div>
 
   );
