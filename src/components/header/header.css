@@ -36,7 +36,7 @@
   align-items: center;
 }
 .back {
-  margin-right: 16px;
+  margin-right: 16px !important;
 }
 .bg_black {
   border: none;

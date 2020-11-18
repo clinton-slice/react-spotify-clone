@@ -132,6 +132,7 @@
 .body_songs {
   z-index: 1;
   margin: 20px -30px;
+  padding-bottom: 100px;
 }
 
 .body_info > img {

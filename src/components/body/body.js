@@ -5,6 +5,7 @@ import React from 'react';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import { PlaylistTracks } from 'react-spotify-api';
 import Header from '../header/Header';
 import { useStateValue } from '../../wrappers/app-state-provider';
 import SongList from '../song-list/SongList';
@@ -79,13 +80,19 @@ const Body = ({ spotify }) => {
           <MoreHorizIcon />
         </div>
 
-        {playlist?.tracks.items.map((item) => (
-          <SongList
-            playSong={playSong}
-            track={item.track}
-            key={item.track.id}
-          />
-        ))}
+        <PlaylistTracks id={playlist?.id}>
+          {({ data: tracks }) => (
+            tracks && tracks.items.map((item, index) => (
+              <SongList
+                playSong={playSong}
+                track={item.track}
+                // eslint-disable-next-line react/no-array-index-key
+                key={`${item.track.id}-${index}`}
+              />
+            ))
+
+          )}
+        </PlaylistTracks>
       </div>
     </div>
   );

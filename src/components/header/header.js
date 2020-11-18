@@ -1,22 +1,46 @@
 import './Header.css';
 import React from 'react';
-import { Avatar } from '@material-ui/core';
+import { Avatar, IconButton } from '@material-ui/core';
 import { useStateValue } from '../../wrappers/app-state-provider';
 import { Back, Forward } from '../../assets/icons';
 
 const Header = () => {
-  const [{ user }] = useStateValue();
-
+  const [{ user, playlists }, dispatch] = useStateValue();
+  let count = 0;
+  const next = () => {
+    if (count < playlists.length) {
+      count += 1;
+    }
+    dispatch({
+      type: 'SET_PLAYLIST',
+      playlist: playlists[count],
+    });
+    // console.log('next id: ', playlists[count]);
+  };
+  const back = () => {
+    if (count > playlists.length) {
+      count -= 1;
+    }
+    dispatch({
+      type: 'SET_PLAYLIST',
+      playlist: playlists[count],
+    });
+    // console.log('prev id: ', playlists[count]);
+  };
   return (
     <div className="header">
       <div className="header_left">
         <div className="playlist_control">
-          <div className="back bg_black">
-            <Back />
-          </div>
-          <div className="forward bg_black">
-            <Forward />
-          </div>
+          <IconButton className="back" onClick={back}>
+            <div className="bg_black">
+              <Back />
+            </div>
+          </IconButton>
+          <IconButton className="back" onClick={next}>
+            <div className="forward bg_black">
+              <Forward />
+            </div>
+          </IconButton>
         </div>
 
       </div>
